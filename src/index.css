@@ -28,6 +28,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Satoshi";
+  src: url("./assets/fonts/Satoshi-Light.otf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -45,6 +52,21 @@
 
 h1 {
   font-family: "Boska";
+}
+
+nav {
+  font-family: "Boska";
+}
+
+nav a {
+  color: white;
+  font-family: "Boska-light";
+  font-size: 23px;
+  transition: all 0.2s linear;
+}
+
+nav a:hover {
+  color: #eb3813;
 }
 
 a {
@@ -69,12 +91,12 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #eb3813;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #fff;
 }
 button:focus,
 button:focus-visible {
@@ -109,11 +131,24 @@ nav {
   }
 }
 
+.text-hero {
+  font-family: "Satoshi";
+  font-size: 18px;
+  font-weight: 500;
+}
+
 .bg-hero {
   background-image: url(assets/bmw/bmw_hero.jpg);
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
   width: 100%;
   height: 100vh;
-  background-size: cover;
+}
+
+@media (max-width: 968px) {
+  .bg-hero {
+    background-position: left;
+    background-size: cover;
+  }
 }
