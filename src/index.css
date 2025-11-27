@@ -1,5 +1,33 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Boska";
+  src: url("./assets/fonts/Boska-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Boska";
+  src: url("./assets/fonts/Boska-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Boska";
+  src: url("./assets/fonts/Boska-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Boska";
+  src: url("./assets/fonts/Boska-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -15,6 +43,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1 {
+  font-family: "Boska";
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -28,11 +60,6 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
 }
 
 button {
