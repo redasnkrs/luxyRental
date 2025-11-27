@@ -26,8 +26,6 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -70,7 +68,7 @@ button:focus-visible {
 }
 
 nav {
-  animation: slideIn 0.8s linear forwards;
+  animation: slideIn 1.1s linear forwards;
 }
 
 @keyframes slideIn {
@@ -88,4 +86,7 @@ nav {
   background-image: url(assets/bmw/bmw_hero.jpg);
   background-position: center;
   background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
 }
