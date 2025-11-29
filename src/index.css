@@ -64,6 +64,10 @@ h2 {
   font-family: "Boska-light";
 }
 
+h3 {
+  font-family: "Boska";
+}
+
 nav {
   font-family: "Boska";
 }
@@ -113,6 +117,15 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+#card-btn {
+  background-color: transparent;
+  color: #666666;
+}
+
+#card-btn:hover {
+  border-color: #fff;
 }
 
 @media (prefers-color-scheme: light) {
