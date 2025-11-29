@@ -29,8 +29,14 @@
 }
 
 @font-face {
-  font-family: "Satoshi";
+  font-family: "Satoshi-light";
   src: url("./assets/fonts/Satoshi-Light.otf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Satoshi-light-italic";
+  src: url("./assets/fonts/Satoshi-LightItalic.otf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
@@ -42,7 +48,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #000000;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -52,6 +58,10 @@
 
 h1 {
   font-family: "Boska";
+}
+
+h2 {
+  font-family: "Boska-light";
 }
 
 nav {
@@ -93,10 +103,12 @@ button {
   font-family: inherit;
   background-color: #eb3813;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: all 0.25s;
 }
 button:hover {
-  border-color: #fff;
+  background-color: #fff;
+  border-color: #eb3813;
+  color: #eb3813;
 }
 button:focus,
 button:focus-visible {
@@ -132,9 +144,17 @@ nav {
 }
 
 .text-hero {
-  font-family: "Satoshi";
+  font-family: "Satoshi-light";
   font-size: 18px;
   font-weight: 500;
+}
+
+.text-about {
+  font-family: "Satoshi-light-italic";
+  font-size: 13px;
+}
+.text-about-2 {
+  font-family: "Satoshi-light-italic";
 }
 
 .bg-hero {
@@ -150,5 +170,42 @@ nav {
   .bg-hero {
     background-position: left;
     background-size: cover;
+  }
+}
+
+.about-pic {
+  position: relative;
+  top: 0;
+  right: 0;
+  height: 503px;
+  width: 335px;
+  background-image: url("assets/lambh/about-lamb.jpg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.about-pic::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 15px;
+  top: 15px;
+  height: 503px;
+  width: 335px;
+  background: linear-gradient(
+    to bottom,
+    #000000 0%,
+    #000000 30%,
+    #d71717 70%,
+    #a80000 100%
+  );
+  filter: saturate(0.9);
+}
+
+@media (max-width: 968px) {
+  .about-pic {
+    margin-top: 250px;
+    left: 50%;
   }
 }
