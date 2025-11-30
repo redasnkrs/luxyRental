@@ -4,9 +4,9 @@ import { CarCard } from "./CarCard";
 
 // Replace with your actual imports
 import porscheImg from "../assets/car/porshe/outside-porsche.jpg";
-import bugattiImg from "../assets/bmw/bmw_hero.jpg";
-import lamborghiniImg from "../assets/lambh/about-lamb.jpg";
-import ferrariImg from "../assets/car/porshe/outside-porsche.jpg";
+import bugattiImg from "../assets/car/bugatti/bugatti-super-sport.jpeg";
+import lamborghiniImg from "../assets/car/lambh/revuelto.jpg";
+import ferrariImg from "../assets/car/ferrari/black_812sf_36.jpg";
 
 const ChooseCar: React.FC = () => {
   const handleLearnMore = (title: string) => {
@@ -61,7 +61,7 @@ const ChooseCar: React.FC = () => {
         />
 
         <CarCard
-          title="Ferrari"
+          title="Ferrari 812 Superfast"
           imageSrc={ferrariImg}
           imageAlt="Ferrari in a garage setting"
           pricePerDay={1099}

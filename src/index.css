@@ -181,7 +181,7 @@ nav {
 }
 
 .bg-hero {
-  background-image: url(assets/bmw/bmw_hero.jpg);
+  background-image: url(assets/car/bmw/bmw_hero.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -202,7 +202,7 @@ nav {
   right: 0;
   height: 503px;
   width: 335px;
-  background-image: url("assets/lambh/about-lamb.jpg");
+  background-image: url("assets/car/lambh/about-lamb.jpg");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
