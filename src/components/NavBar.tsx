@@ -1,5 +1,5 @@
 // Navbar.jsx
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Logo from "../assets/logo/luxyrental-logo-white.png";
 
 const Navbar = () => {
