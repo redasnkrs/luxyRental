@@ -21,7 +21,9 @@ const Navbar = () => {
       ].join(" ")}
     >
       <div className="flex items-center justify-evenly gap-4 h-16 px-4">
-        <img src={Logo} className="mt-2 h-8 w-auto" alt="Luxy Rental Logo" />
+        <a href="#hero">
+          <img src={Logo} className="mt-2 h-8 w-auto" alt="Luxy Rental Logo" />
+        </a>
 
         <ul className="flex items-center gap-5">
           <li>

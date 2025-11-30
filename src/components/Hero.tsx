@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="bg-hero">
+    <section className="bg-hero" id="hero">
       <div className="absolute mt-[640px] pl-3">
         <h1 className=" lg:text-9xl text-7xl">
           The next level <br />
