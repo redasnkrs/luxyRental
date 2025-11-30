@@ -1,5 +1,6 @@
 // CarCard.tsx
 import React from "react";
+import ShinyText from "./animation/ShinyText";
 
 export type Stat = {
   label: string; // e.g., "Top Speed"
@@ -40,7 +41,7 @@ export const CarCard: React.FC<CarCardProps> = ({
       {/* Image */}
       <div className="relative">
         {/* Aspect ratio to keep consistent height */}
-        <div className="aspect-[16/9] w-full bg-neutral-900">
+        <div className="aspect-video w-full bg-neutral-900">
           <img
             src={imageSrc}
             alt={imageAlt}
@@ -82,7 +83,12 @@ export const CarCard: React.FC<CarCardProps> = ({
           id="card-btn"
           className="inline-flex items-center gap-2 px-4 py-2  "
         >
-          Learn More
+          <ShinyText
+            text="Learn More"
+            disabled={false}
+            speed={4}
+            className="custom-class"
+          />
           <span aria-hidden="true">
             <svg
               xmlns="http://www.w3.org/2000/svg"
