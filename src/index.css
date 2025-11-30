@@ -223,7 +223,7 @@ nav {
     #000000 0%,
     #000000 30%,
     #d71717 70%,
-    #a80000 100%
+    #eb3813 100%
   );
   filter: saturate(0.9);
 }
@@ -244,4 +244,26 @@ nav {
   font-family: "Geist";
   font-size: 13px;
   font-weight: 200;
+}
+
+.block-line-wrapper {
+  position: relative;
+  width: max-content;
+  display: block;
+}
+
+.block-line {
+  position: relative;
+  display: block;
+}
+
+.block-revealer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 101%;
+  height: 101%;
+  pointer-events: none;
+  will-change: transform;
+  z-index: 1;
 }
