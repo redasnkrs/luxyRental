@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
 @import "tailwindcss";
 
 @font-face {
@@ -122,10 +123,11 @@ button:focus-visible {
 #card-btn {
   background-color: transparent;
   color: #666666;
+  padding: 4px 0;
 }
 
 #card-btn:hover {
-  border-color: #eb3813;
+  border-color: transparent;
 }
 
 #card-btn svg {
@@ -229,4 +231,15 @@ nav {
     margin-top: 250px;
     left: 50%;
   }
+}
+
+.card-title {
+  font-family: "Geist";
+  font-size: 18px;
+  font-weight: 300;
+}
+.card-desc {
+  font-family: "Geist";
+  font-size: 13px;
+  font-weight: 200;
 }

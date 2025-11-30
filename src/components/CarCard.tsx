@@ -35,17 +35,17 @@ export const CarCard: React.FC<CarCardProps> = ({
 }) => {
   return (
     <article
-      className={` relative overflow-hidden   bg-black shadow-lg ${className}`}
+      className={` relative overflow-hidden   bg-black shadow-lg ${className} `}
       aria-label={title}
     >
       {/* Image */}
       <div className="relative">
         {/* Aspect ratio to keep consistent height */}
-        <div className="aspect-video w-full bg-neutral-900">
+        <div className="aspect-video w-full bg-neutral-900 ">
           <img
             src={imageSrc}
             alt={imageAlt}
-            className="h-full w-full object-cover rounded-xl"
+            className="h-full w-full object-cover rounded-xl "
             loading="lazy"
           />
         </div>
@@ -69,10 +69,8 @@ export const CarCard: React.FC<CarCardProps> = ({
       {/* Bottom content row: title + price left, CTA right */}
       <div className="mt-2 bottom-4 left-4 right-4 flex items-end justify-between">
         <div className="flex min-w-0 flex-col">
-          <h4 className="truncate text-white text-lg sm:text-xl font-semibold">
-            {title}
-          </h4>
-          <p className="text-neutral-300 text-sm">
+          <h4 className="truncate text-white  card-title ">{title}</h4>
+          <p className="text-neutral-300 text-sm  card-desc ">
             from {currency(pricePerDay)}/day
           </p>
         </div>
@@ -81,7 +79,7 @@ export const CarCard: React.FC<CarCardProps> = ({
           type="button"
           onClick={onLearnMore}
           id="card-btn"
-          className="inline-flex items-center gap-2 px-4 py-2  "
+          className="inline-flex items-center gap-2   "
         >
           <ShinyText
             text="Learn More"
