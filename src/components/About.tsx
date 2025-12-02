@@ -6,7 +6,10 @@ export default function About() {
   return (
     <>
       <ReactLenis root />
-      <section className="mt-56 mb-56 lg:ml-[335px] sm:ml-5 relative">
+      <section
+        id="about"
+        className="mt-56 mb-56 lg:ml-[335px] sm:ml-5 relative"
+      >
         <div className="mb-8">
           <h2 className="text-4xl">
             Dedicated <br />
