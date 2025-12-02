@@ -35,13 +35,13 @@ export const CarCard: React.FC<CarCardProps> = ({
 }) => {
   return (
     <article
-      className={` relative overflow-hidden   bg-black shadow-lg ${className} `}
+      className={` relative overflow-hidden   bg-black shadow-lg ${className} hover:scale-105 tratransition-all duration-300 `}
       aria-label={title}
     >
       {/* Image */}
-      <div className="relative">
+      <div className="relative ">
         {/* Aspect ratio to keep consistent height */}
-        <div className="aspect-video w-full bg-neutral-900 ">
+        <div className="aspect-video w-full bg-neutral-900  ">
           <img
             src={imageSrc}
             alt={imageAlt}
@@ -51,7 +51,7 @@ export const CarCard: React.FC<CarCardProps> = ({
         </div>
 
         {/* Dark gradient overlay: stronger at bottom for legibility */}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10 " />
 
         {/* Top-left stat chips */}
         <div className="absolute left-4 top-4 flex flex-wrap gap-2">
