@@ -39,7 +39,7 @@ export const CarCard: React.FC<CarCardProps> = ({
   const currentImageSrc = isHovered && hoverImageSrc ? hoverImageSrc : imageSrc;
   return (
     <article
-      className={` relative overflow-hidden   bg-black shadow-lg ${className} hover:scale-105 tratransition-all duration-300 `}
+      className={` relative overflow-hidden   bg-black shadow-lg ${className} hover:scale-105 transition-all duration-500 ease-in-out hover:shadow-2xl hover:shadow-white/10 `}
       aria-label={title}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -47,24 +47,44 @@ export const CarCard: React.FC<CarCardProps> = ({
       {/* Image */}
       <div className="relative ">
         {/* Aspect ratio to keep consistent height */}
-        <div className="aspect-video w-full bg-neutral-900  ">
+        <div className="aspect-video w-full bg-neutral-900 relative overflow-hidden rounded-xl">
+          {/* Base image */}
           <img
-            src={currentImageSrc}
+            src={imageSrc}
             alt={imageAlt}
-            className="h-full w-full object-cover rounded-xl transition-opacity duration-300"
+            className="h-full w-full object-cover absolute inset-0 transition-transform duration-500 ease-in-out"
             loading="lazy"
           />
+          {/* Hover image with crossfade effect */}
+          {hoverImageSrc && (
+            <img
+              src={hoverImageSrc}
+              alt={imageAlt}
+              className={`h-full w-full object-cover absolute inset-0 transition-all duration-500 ease-in-out ${
+                isHovered ? "opacity-100 scale-105" : "opacity-0 scale-100"
+              }`}
+              loading="lazy"
+            />
+          )}
         </div>
 
         {/* Dark gradient overlay: stronger at bottom for legibility */}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10 " />
+        <div
+          className={`pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10 transition-all duration-500 ${
+            isHovered ? "from-black/60 via-black/20 to-black/5" : ""
+          }`}
+        />
 
         {/* Top-left stat chips */}
         <div className="absolute left-4 top-4 flex flex-wrap gap-2">
           {stats.map((s) => (
             <div
               key={`${s.label}-${s.value}`}
-              className="rounded-md bg-black/60 px-3 py-1.5 text-xs text-neutral-200 backdrop-blur-sm border border-white/10"
+              className={`rounded-md bg-black/60 px-3 py-1.5 text-xs text-neutral-200 backdrop-blur-sm border border-white/10 transition-all duration-300 ${
+                isHovered
+                  ? "bg-black/70 border-white/20 transform translate-y-[-2px]"
+                  : ""
+              }`}
             >
               <span className="font-medium text-white">{s.value}</span>
               <span className="ml-1 text-neutral-300">• {s.label}</span>
@@ -73,7 +93,11 @@ export const CarCard: React.FC<CarCardProps> = ({
         </div>
       </div>
       {/* Bottom content row: title + price left, CTA right */}
-      <div className="mt-2 bottom-4 left-4 right-4 flex items-end justify-between">
+      <div
+        className={`mt-2 bottom-4 left-4 right-4 flex items-end justify-between transition-all duration-300 ${
+          isHovered ? "transform translate-y-[-2px]" : ""
+        }`}
+      >
         <div className="flex min-w-0 flex-col">
           <h4 className="truncate text-white  card-title ">{title}</h4>
           <p className="text-neutral-300 text-sm  card-desc ">
