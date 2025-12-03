@@ -1,5 +1,5 @@
 // CarCard.tsx
-import React from "react";
+import React, { useState } from "react";
 import ShinyText from "./animation/ShinyText";
 
 export type Stat = {
@@ -10,6 +10,7 @@ export type Stat = {
 export type CarCardProps = {
   title: string;
   imageSrc: string;
+  hoverImageSrc?: string;
   imageAlt: string;
   pricePerDay: number; // e.g., 1299
   stats: Stat[]; // exactly 3 per your design (speed, 0-100, hp)
@@ -27,25 +28,30 @@ const currency = (amount: number) =>
 export const CarCard: React.FC<CarCardProps> = ({
   title,
   imageSrc,
+  hoverImageSrc,
   imageAlt,
   pricePerDay,
   stats,
   onLearnMore,
   className = "",
 }) => {
+  const [isHovered, setIsHovered] = useState(false);
+  const currentImageSrc = isHovered && hoverImageSrc ? hoverImageSrc : imageSrc;
   return (
     <article
       className={` relative overflow-hidden   bg-black shadow-lg ${className} hover:scale-105 tratransition-all duration-300 `}
       aria-label={title}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
       {/* Image */}
       <div className="relative ">
         {/* Aspect ratio to keep consistent height */}
         <div className="aspect-video w-full bg-neutral-900  ">
           <img
-            src={imageSrc}
+            src={currentImageSrc}
             alt={imageAlt}
-            className="h-full w-full object-cover rounded-xl "
+            className="h-full w-full object-cover rounded-xl transition-opacity duration-300"
             loading="lazy"
           />
         </div>

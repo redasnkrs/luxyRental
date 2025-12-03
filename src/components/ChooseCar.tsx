@@ -4,6 +4,7 @@ import { CarCard } from "./CarCard";
 
 // Replace with your actual imports
 import porscheImg from "../assets/car/porshe/outside-porsche.jpg";
+import gt3rsImg from "../assets/car/porshe/gt3rs-interrior.jpg";
 import bugattiImg from "../assets/car/bugatti/bugatti-super-sport.jpeg";
 import lamborghiniImg from "../assets/car/lambh/revuelto.jpg";
 import ferrariImg from "../assets/car/ferrari/black_812sf_36.jpg";
@@ -24,6 +25,7 @@ const ChooseCar: React.FC = () => {
         <CarCard
           title="Porsche 911 Turbo S"
           imageSrc={porscheImg}
+          hoverImageSrc={gt3rsImg}
           imageAlt="Black Porsche 911 Turbo S convertible by a reflective pool at sunset"
           pricePerDay={1299}
           stats={[
