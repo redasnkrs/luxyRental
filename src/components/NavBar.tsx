@@ -16,7 +16,7 @@ const Navbar = () => {
     <nav
       className={[
         "fixed top-0 w-full z-50",
-        "transition-colors duration-200",
+        "transition-colors duration-500",
         scrolled ? "bg-white/20 backdrop-blur-md shadow-md" : "bg-transparent",
       ].join(" ")}
     >
