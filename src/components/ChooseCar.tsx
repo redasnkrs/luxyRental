@@ -4,7 +4,7 @@ import { CarCard } from "./CarCard";
 
 // Replace with your actual imports
 import porscheImg from "../assets/car/porshe/outside-porsche.jpg";
-import PorsheInteriorImg from "../assets/car/porshe/Porsche-911-Turbo-S-Interrior.jpg";
+import porscheInterriorImg from "../assets/car/porshe/Porsche-911-Turbo-S-Interrior.jpg";
 import bugattiImg from "../assets/car/bugatti/bugatti-super-sport.jpeg";
 import lamborghiniImg from "../assets/car/lambh/revuelto.jpg";
 import ferrariImg from "../assets/car/ferrari/black_812sf_36.jpg";
@@ -26,12 +26,12 @@ const ChooseCar: React.FC = () => {
         <CarCard
           title="Porsche 911 Turbo S"
           imageSrc={porscheImg}
-          hoverImageSrc={PorsheInteriorImg}
+          hoverImageSrc={porscheInterriorImg}
           imageAlt="Black Porsche 911 Turbo S convertible by a reflective pool at sunset"
           pricePerDay={1299}
           stats={[
-            { label: "Top Speed", value: "330 km/h" },
-            { label: "0–100", value: "2.5 s" },
+            { label: "Top Speed", value: "322 km/h" },
+            { label: "0–100", value: "2.6 s" },
             { label: "Horsepower", value: "750 hp" },
           ]}
           onLearnMore={() => handleLearnMore("Porsche 911 Turbo S")}
@@ -70,9 +70,9 @@ const ChooseCar: React.FC = () => {
           imageAlt="Ferrari in a garage setting"
           pricePerDay={1099}
           stats={[
-            { label: "Top Speed", value: "330 km/h" },
-            { label: "0–100", value: "3.0 s" },
-            { label: "Horsepower", value: "710 hp" },
+            { label: "Top Speed", value: "355 km/h" },
+            { label: "0–100", value: "2.9 s" },
+            { label: "Horsepower", value: "800 hp" },
           ]}
           onLearnMore={() => handleLearnMore("Ferrari")}
         />

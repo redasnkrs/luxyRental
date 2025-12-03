@@ -136,6 +136,11 @@ button:focus-visible {
   stroke: #666666;
 }
 
+#card-btn:focus,
+#card-btn:focus-visible {
+  outline: none;
+}
+
 #card-btn span[class*="animate-shine"] {
   color: transparent !important;
 }
