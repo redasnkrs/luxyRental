@@ -9,6 +9,7 @@ export default function News() {
         </h3>
       </section>
       <HorizontalScroll />
+      <div className="mb-56"></div>
     </>
   );
 }
