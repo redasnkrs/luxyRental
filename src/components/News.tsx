@@ -1,3 +1,5 @@
+import HorizontalScroll from "./animation/HorizontalScroll";
+
 export default function News() {
   return (
     <>
@@ -6,6 +8,7 @@ export default function News() {
           News
         </h3>
       </section>
+      <HorizontalScroll />
     </>
   );
 }
