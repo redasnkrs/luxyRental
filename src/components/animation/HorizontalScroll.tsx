@@ -38,7 +38,7 @@ const Card = ({ card }: { card: CardType }) => {
           backgroundSize: "cover",
           backgroundPosition: `${card.position}`,
         }}
-        className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110"
+        className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110 brightness-75  "
       ></div>
       <div className="absolute z-10 bottom-10">
         <div className="flex flex-col gap-2">
@@ -72,11 +72,12 @@ const cards: CardType[] = [
     position: "left",
   },
   {
-    url: "src/assets/car/bugatti/bugatti-super-sport.jpeg",
-    title: "Title 2",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    url: "src/assets/car/ferrari/laferrari-front.jpg",
+    title: "LA FERRARI",
+    description:
+      "Ferrari announce their new ferrari called LA FERRARI. It should have a new V12.",
     id: 2,
-    position: "right",
+    position: "left",
   },
   {
     url: "src/assets/car/bugatti/bugatti-super-sport.jpeg",
