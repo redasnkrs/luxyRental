@@ -11,12 +11,12 @@ const HorizontalScrollCarousel = () => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-98%"]);
 
   return (
-    <section ref={targetRef} className="relative h-[300vh] bg-transparent">
+    <section ref={targetRef} className="relative h-[400vh] bg-transparent">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-        <motion.div style={{ x }} className="flex gap-56">
+        <motion.div style={{ x }} className="flex gap-36">
           {cards.map((card) => {
             return <Card card={card} key={card.id} />;
           })}
@@ -36,7 +36,7 @@ const Card = ({ card }: { card: CardType }) => {
         style={{
           backgroundImage: `url(${card.url})`,
           backgroundSize: "cover",
-          backgroundPosition: "right",
+          backgroundPosition: `${card.position}`,
         }}
         className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110"
       ></div>
@@ -59,50 +59,58 @@ type CardType = {
   title: string;
   description: string;
   id: number;
+  position: string;
 };
 
 const cards: CardType[] = [
   {
-    url: "src/assets/car/bugatti/bugatti-super-sport.jpeg",
-    title: "Title 1",
+    url: "src/assets/car/mercedes/mercedess-front.jpg",
+    title: "Mercedess CLS AMG",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Review of the new Mercedes CLS AMG. They have a new V8 we're going look into it. Mercedes says it's the best CLS in 2025.",
     id: 1,
+    position: "left",
   },
   {
-    url: "/imgs/abstract/2.jpg",
+    url: "src/assets/car/bugatti/bugatti-super-sport.jpeg",
     title: "Title 2",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     id: 2,
+    position: "right",
   },
   {
-    url: "/imgs/abstract/3.jpg",
+    url: "src/assets/car/bugatti/bugatti-super-sport.jpeg",
     title: "Title 3",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     id: 3,
+    position: "right",
   },
   {
-    url: "/imgs/abstract/4.jpg",
+    url: "src/assets/car/bugatti/bugatti-super-sport.jpeg",
     title: "Title 4",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     id: 4,
+    position: "right",
   },
   {
-    url: "/imgs/abstract/5.jpg",
+    url: "src/assets/car/bugatti/bugatti-super-sport.jpeg",
     title: "Title 5",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     id: 5,
+    position: "right",
   },
   {
-    url: "/imgs/abstract/6.jpg",
+    url: "src/assets/car/bugatti/bugatti-super-sport.jpeg",
     title: "Title 6",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     id: 6,
+    position: "right",
   },
   {
-    url: "/imgs/abstract/7.jpg",
+    url: "src/assets/car/bugatti/bugatti-super-sport.jpeg",
     title: "Title 7",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     id: 7,
+    position: "right",
   },
 ];
