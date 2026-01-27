@@ -36,10 +36,9 @@ export const CarCard: React.FC<CarCardProps> = ({
   className = "",
 }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const currentImageSrc = isHovered && hoverImageSrc ? hoverImageSrc : imageSrc;
   return (
     <article
-      className={` relative overflow-hidden   bg-black shadow-lg ${className} hover:scale-105 transition-all duration-500 ease-in-out hover:shadow-2xl hover:shadow-white/10 `}
+      className={` relative overflow-hidden   bg-black shadow-lg ${className} hover:scale-105 transition-all duration-500 ease-in-out hover:shadow-2xl  `}
       aria-label={title}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
