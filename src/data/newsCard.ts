@@ -24,38 +24,44 @@ export const cards: CardType[] = [
     position: "left",
   },
   {
-    url: "src/assets/car/bugatti/bugatti-super-sport.jpeg",
-    title: "Title 3",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    url: "src/assets/car/aston/aston-db11.webp",
+    title: "Aston Martin DB11",
+    description:
+      "The ultimate hypercar returns. With 1600 HP and a top speed of 300+ mph, the Chiron Super Sport redefines what is possible on four wheels.",
     id: 3,
     position: "right",
   },
   {
-    url: "src/assets/car/bugatti/bugatti-super-sport.jpeg",
-    title: "Title 4",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    url: "src/assets/car/bmw/bmw-top.jpg",
+    title: "BMW M4",
+    description:
+      "Born on the track, unleashed on the road. The new GT3 RS features active aerodynamics and a naturally aspirated 4.0L flat-six engine.",
     id: 4,
     position: "right",
   },
   {
-    url: "src/assets/car/bugatti/bugatti-super-sport.jpeg",
-    title: "Title 5",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    url: "src/assets/car/porshe/gt3rs-interrior.jpg",
+    title: "Porsche GT3 RS",
+    description:
+      "Precision meets power. The new M4 Competition brings aggressive styling and track-ready performance to the luxury coupe segment.",
     id: 5,
     position: "right",
   },
   {
-    url: "src/assets/car/bugatti/bugatti-super-sport.jpeg",
-    title: "Title 6",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    url: "src/assets/car/nissan/nissan-r35.webp",
+    title: "Nissan GT-R",
+    description:
+      "Lamborghini's first High Performance Electrified Vehicle (HPEV). A V12 plug-in hybrid that keeps the soul of the raging bull alive.",
     id: 6,
-    position: "right",
+    position: "left",
   },
+
   {
-    url: "src/assets/car/bugatti/bugatti-super-sport.jpeg",
-    title: "Title 7",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    url: "src/assets/car/mclaren/mclaren-720s-back.png",
+    title: "McLaren 720S",
+    description:
+      "The most powerful naturally aspirated V12 Ferrari has ever produced. A grand tourer that delivers breathtaking acceleration and elegance.",
     id: 7,
-    position: "right",
+    position: "left",
   },
 ];
