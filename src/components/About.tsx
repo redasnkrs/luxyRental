@@ -1,11 +1,9 @@
 "use client";
-import { ReactLenis } from "lenis/react";
 import Copy from "./animation/Copy";
 
 export default function About() {
   return (
     <>
-      <ReactLenis root />
       <section
         id="about"
         className="mt-56 mb-56 lg:ml-[335px] sm:ml-5 relative"
