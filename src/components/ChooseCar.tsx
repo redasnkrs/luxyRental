@@ -3,12 +3,12 @@ import React from "react";
 import { CarCard } from "./CarCard";
 
 // Replace with your actual imports
-import porscheImg from "../assets/car/porshe/outside-porsche.jpg";
-import porscheInterriorImg from "../assets/car/porshe/Porsche-911-Turbo-S-Interrior.jpg";
-import bugattiImg from "../assets/car/bugatti/bugatti-super-sport.jpeg";
-import lamborghiniImg from "../assets/car/lambh/revuelto.jpg";
-import ferrariImg from "../assets/car/ferrari/black_812sf_36.jpg";
-import ferariInteriorImg from "../assets/car/ferrari/black_812sf_16.jpg";
+import porscheImg from "../assets/car/porshe/outside-porsche.webp";
+import porscheInterriorImg from "../assets/car/porshe/Porsche-911-Turbo-S-Interrior.webp";
+import bugattiImg from "../assets/car/bugatti/bugatti-super-sport.webp";
+import lamborghiniImg from "../assets/car/lambh/revuelto.webp";
+import ferrariImg from "../assets/car/ferrari/black_812sf_36.webp";
+import ferariInteriorImg from "../assets/car/ferrari/black_812sf_16.webp";
 
 const ChooseCar: React.FC = () => {
   const handleLearnMore = (title: string) => {

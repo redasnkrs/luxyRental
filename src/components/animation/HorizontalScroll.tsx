@@ -1,6 +1,8 @@
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef } from "react";
-import { cards } from "../../data/newsCard";
+import { cards, CardType } from "../../data/newsCard";
+import { Link } from "react-router-dom";
+
 const Example = () => {
   return <HorizontalScrollCarousel />;
 };
@@ -28,9 +30,10 @@ const HorizontalScrollCarousel = () => {
 
 const Card = ({ card }: { card: CardType }) => {
   return (
-    <div
+    <Link
+      to={`/news/${card.id}`}
       key={card.id}
-      className="group relative h-[542px] w-[509px] overflow-hidden bg-neutral-200 rounded"
+      className="group relative h-[542px] w-[509px] overflow-hidden bg-neutral-200 rounded block"
     >
       <div
         style={{
@@ -48,7 +51,7 @@ const Card = ({ card }: { card: CardType }) => {
           <p className=" pl-3  text-white w-[510px]">{card.description}</p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

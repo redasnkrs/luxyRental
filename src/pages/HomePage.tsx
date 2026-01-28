@@ -1,5 +1,4 @@
 import Hero from "../components/Hero";
-import NavBar from "../components/NavBar";
 import About from "../components/About";
 import ChooseCar from "../components/ChooseCar";
 import News from "../components/News";
@@ -9,7 +8,6 @@ function HomePage() {
   return (
     <>
       <ReactLenis root />
-      <NavBar />
       <Hero />
       <About />
       <ChooseCar />
