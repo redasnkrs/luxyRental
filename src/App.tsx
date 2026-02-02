@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import CarDetails from "./pages/CarDetails";
@@ -12,6 +12,7 @@ import MercedesPage from "./pages/brands/MercedesPage";
 import NissanPage from "./pages/brands/NissanPage";
 import PorschePage from "./pages/brands/PorschePage";
 import NavBar from "./components/NavBar";
+import LoadingScreen from "./components/LoadingScreen";
 import { ReactLenis, useLenis } from "lenis/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -45,9 +46,12 @@ function LenisScrollHandler() {
 }
 
 export default function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
     <ReactLenis root>
       <LenisScrollHandler />
+      {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
       <Router>
         <NavBar />
         <Routes>
