@@ -12,6 +12,7 @@ import MercedesPage from "./pages/brands/MercedesPage";
 import NissanPage from "./pages/brands/NissanPage";
 import PorschePage from "./pages/brands/PorschePage";
 import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 import LoadingScreen from "./components/LoadingScreen";
 import { ReactLenis, useLenis } from "lenis/react";
 import gsap from "gsap";
@@ -48,6 +49,14 @@ function LenisScrollHandler() {
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
 
+  useEffect(() => {
+    if (isLoading) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isLoading]);
+
   return (
     <ReactLenis root>
       <LenisScrollHandler />
@@ -69,6 +78,7 @@ export default function App() {
           <Route path="/brand/nissan" element={<NissanPage />} />
           <Route path="/brand/porsche" element={<PorschePage />} />
         </Routes>
+        <Footer />
       </Router>
     </ReactLenis>
   );
