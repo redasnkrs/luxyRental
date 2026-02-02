@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { cards, CardType } from "../../data/newsCard";
+import { news, type CardType } from "../../../data/news";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -7,7 +7,7 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Example = () => {
+const HorizontalScroll = () => {
   return <HorizontalScrollCarousel />;
 };
 
@@ -32,10 +32,10 @@ const HorizontalScrollCarousel = () => {
       ease: "none",
       scrollTrigger: {
         trigger: container,
-        start: "top top",
-        end: `+=${Math.abs(xMovement)}`, // Scroll duration matches distance
+        start: "top 20%",
+        end: `+=${Math.abs(xMovement) + 1000}`, // Increased scroll duration for smoother feel
         pin: true,
-        scrub: 1, // Smooth scrubbing (adds that 'weight' to the scroll)
+        scrub: 1,
         invalidateOnRefresh: true,
         anticipatePin: 1
       }
@@ -44,12 +44,9 @@ const HorizontalScrollCarousel = () => {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="relative w-full h-screen overflow-hidden">
-      <div 
-        ref={wrapperRef} 
-        className="flex gap-36 items-center h-full px-10 w-max will-change-transform"
-      >
-        {cards.map((card) => {
+    <section ref={containerRef} className="relative w-full h-screen overflow-hidden pt-20">
+      <div ref={wrapperRef} className="flex h-full gap-10 pl-4 md:pl-20 items-center">
+        {news.map((card) => {
           return <Card card={card} key={card.id} />;
         })}
       </div>
@@ -84,4 +81,4 @@ const Card = ({ card }: { card: CardType }) => {
   );
 };
 
-export default Example;
+export default HorizontalScroll;

@@ -14,7 +14,7 @@ export type CardType = {
   position: string;
 };
 
-export const cards: CardType[] = [
+export const news: CardType[] = [
   {
     url: mercFront,
     title: "Mercedes CLS AMG",

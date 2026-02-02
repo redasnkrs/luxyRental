@@ -1,16 +1,12 @@
 import { useParams } from "react-router-dom";
-import { cards } from "@/data/newsCard";
+import { news } from "../data/news";
 
-const CarDetails = () => {
+export default function CarDetails() {
   const { id } = useParams();
-  const car = cards.find((c) => c.id === Number(id));
+  const car = news.find((c) => c.id === Number(id));
 
   if (!car) {
-    return (
-      <div className="min-h-screen bg-black text-white flex items-center justify-center">
-        <h1 className="text-2xl">Car not found</h1>
-      </div>
-    );
+    return <div>Car not found</div>;
   }
 
   return (
@@ -44,4 +40,4 @@ const CarDetails = () => {
   );
 };
 
-export default CarDetails;
+

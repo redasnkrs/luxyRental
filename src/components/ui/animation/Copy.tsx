@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, type ReactNode } from "react";
 
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
@@ -8,6 +8,15 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
+interface CopyProps {
+  children: ReactNode;
+  animateOnScroll?: boolean;
+  delay?: number;
+  blockColor?: string;
+  stagger?: number;
+  duration?: number;
+}
+
 export default function Copy({
   children,
   animateOnScroll = true,
@@ -15,11 +24,11 @@ export default function Copy({
   blockColor = "#000",
   stagger = 0.15,
   duration = 0.75,
-}) {
-  const containerRef = useRef(null);
-  const splitRefs = useRef([]);
-  const lines = useRef([]);
-  const blocks = useRef([]);
+}: CopyProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const splitRefs = useRef<any[]>([]);
+  const lines = useRef<any[]>([]);
+  const blocks = useRef<any[]>([]);
 
   useGSAP(
     () => {
@@ -29,7 +38,7 @@ export default function Copy({
       lines.current = [];
       blocks.current = [];
 
-      let elements = [];
+      let elements: Element[] = [];
       if (containerRef.current.hasAttribute("data-copy-wrapper")) {
         elements = Array.from(containerRef.current.children);
       } else {
@@ -45,10 +54,12 @@ export default function Copy({
 
         splitRefs.current.push(split);
 
-        split.lines.forEach((line) => {
+        split.lines.forEach((line: any) => {
           const wrapper = document.createElement("div");
           wrapper.className = "block-line-wrapper";
-          line.parentNode.insertBefore(wrapper, line);
+          if (line.parentNode) {
+            line.parentNode.insertBefore(wrapper, line);
+          }
           wrapper.appendChild(line);
 
           const block = document.createElement("div");
@@ -64,7 +75,7 @@ export default function Copy({
       gsap.set(lines.current, { opacity: 0 });
       gsap.set(blocks.current, { scaleX: 0, transformOrigin: "left center" });
 
-      const createBlockRevealAnimation = (block, line, index) => {
+      const createBlockRevealAnimation = (block: any, line: any, index: number) => {
         const tl = gsap.timeline({ delay: delay + index * stagger });
 
         tl.to(block, { scaleX: 1, duration: duration, ease: "power4.inOut" });
@@ -117,8 +128,9 @@ export default function Copy({
     },
   );
 
-  if (React.Children.count(children) === 1) {
-    return React.cloneElement(children, { ref: containerRef });
+  if (React.Children.count(children) === 1 && React.isValidElement(children)) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return React.cloneElement(children as any, { ref: containerRef });
   }
 
   return (

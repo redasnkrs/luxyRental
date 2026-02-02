@@ -1,7 +1,7 @@
-import Hero from "../components/Hero";
-import About from "../components/About";
-import ChooseCar from "../components/ChooseCar";
-import News from "../components/News";
+import Hero from "../components/sections/Hero";
+import About from "../components/sections/About";
+import ChooseCar from "../components/sections/ChooseCar";
+import News from "../components/sections/News";
 
 function HomePage() {
   return (

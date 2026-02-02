@@ -1,5 +1,5 @@
 "use client";
-import Copy from "./animation/Copy";
+import Copy from "../ui/animation/Copy";
 
 export default function About() {
   return (
