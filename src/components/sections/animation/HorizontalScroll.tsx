@@ -77,12 +77,19 @@ const Card = ({ card }: { card: CardType }) => {
         }}
         className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110 brightness-75"
       ></div>
-      <div className="absolute z-10 bottom-10">
-        <div className="flex flex-col gap-2">
-          <p className=" pl-3 text-5xl font-black uppercase text-white ">
-            {card.title}
+      <div className="absolute z-10 bottom-10 left-0 right-0 p-6">
+        <div className="flex flex-col gap-4">
+          <div className="flex justify-between items-end">
+            <p className="text-5xl font-black uppercase text-white leading-none">
+              {card.title}
+            </p>
+            <span className="px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-[10px] uppercase tracking-[0.2em] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              View Review
+            </span>
+          </div>
+          <p className="text-white/80 max-w-sm font-['Satoshi-light'] leading-relaxed">
+            {card.description}
           </p>
-          <p className=" pl-3  text-white w-[510px]">{card.description}</p>
         </div>
       </div>
     </Link>
