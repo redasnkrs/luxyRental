@@ -57,9 +57,9 @@ export default function CarDetails() {
             opacity: heroOpacity,
             y: heroY,
           }}
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center brightness-50"
         >
-          <div className="absolute inset-0 bg-linear-to-b from-black/20 via-transparent to-[#0a0a0a]" />
+          <div className="absolute inset-0 bg-linear-to-b from-black/60 via-transparent to-[#0a0a0a]" />
         </motion.div>
 
         <div className="relative z-10 flex h-full flex-col justify-end pb-20 px-6 md:px-20">
