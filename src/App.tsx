@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import CarDetails from "./pages/CarDetails";
-import BrandPage from "./pages/BrandPage";
-import NavBar from "./components/layout/NavBar";
-import Footer from "./components/layout/Footer";
-import LoadingScreen from "./components/layout/LoadingScreen";
+import HomePage from "@/pages/HomePage";
+import CarDetails from "@/pages/CarDetails";
+import BrandPage from "@/pages/BrandPage";
+import NavBar from "@/components/layout/NavBar";
+import Footer from "@/components/layout/Footer";
+import LoadingScreen from "@/components/layout/LoadingScreen";
 import { ReactLenis, useLenis } from "lenis/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";

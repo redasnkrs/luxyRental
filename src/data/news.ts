@@ -14,19 +14,9 @@ import porscheOutside from "../assets/car/porshe/outside-porsche.webp";
 import nissanInterrior from "../assets/car/nissan/nissan-r35-interrior.webp";
 import nissanFront from "../assets/car/nissan/nissan-r35-front.webp";
 
-export type CardType = {
-  url: string;
-  title: string;
-  description: string;
-  id: number;
-  position: string;
-  longDescription?: string[];
-  gallery?: string[];
-  specs?: { label: string; value: string }[];
-  accentColor?: string;
-};
+import { type NewsCard } from "../types";
 
-export const news: CardType[] = [
+export const news: NewsCard[] = [
   {
     url: mercFront,
     title: "Mercedes CLS AMG",

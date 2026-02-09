@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Instagram, Twitter, Linkedin, Facebook } from "lucide-react";
-import Noise from "../animation/Noise";
+import Noise from "@/components/ui/animation/Noise";
 
 const Footer = () => {
   return (

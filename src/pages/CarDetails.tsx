@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { news } from "../data/news";
+import { news } from "@/data/news";
+import type { NewsCard } from "@/types";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useEffect } from "react";
 import { ArrowLeft, Gauge, Zap, Wind, Timer } from "lucide-react";
@@ -7,7 +8,7 @@ import { ArrowLeft, Gauge, Zap, Wind, Timer } from "lucide-react";
 export default function CarDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const car = news.find((c) => c.id === Number(id));
+  const car = news.find((c) => c.id === Number(id)) as NewsCard;
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

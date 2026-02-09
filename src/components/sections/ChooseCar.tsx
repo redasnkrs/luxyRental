@@ -1,7 +1,7 @@
-// ChooseYourRide.tsx
 import React from "react";
-import { cars } from "../../data/cars";
-import { CarCard } from "../ui/CarCard";
+import { cars } from "@/data/cars";
+import { CarCard } from "@/components/ui/CarCard";
+import type { Car } from "@/types";
 
 const ChooseCar: React.FC = () => {
   return (
@@ -11,15 +11,10 @@ const ChooseCar: React.FC = () => {
       </h3>
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 ">
-        {cars.map((car, index) => (
+        {cars.map((car: Car, index) => (
           <CarCard
             key={index}
-            title={car.title}
-            imageSrc={car.imageSrc}
-            hoverImageSrc={car.hoverImageSrc}
-            imageAlt={car.imageAlt}
-            pricePerDay={car.pricePerDay}
-            stats={car.stats}
+            {...car}
             onLearnMore={() => console.log(`Learn more about ${car.title}`)}
           />
         ))}

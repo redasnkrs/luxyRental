@@ -1,6 +1,6 @@
 // Navbar.jsx
 import { useEffect, useState } from "react";
-import Logo from "../../assets/logo/luxyrental-logo-white.webp";
+import Logo from "@/assets/logo/luxyrental-logo-white.webp";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
