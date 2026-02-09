@@ -16,24 +16,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 function LenisScrollHandler() {
   useLenis(() => {
-    // ScrollTrigger.update(); // Not always needed with newer versions but good for safety
+    // ScrollTrigger.update();
   });
 
   useEffect(() => {
-    // Synchronize Lenis and GSAP ScrollTrigger
-    // lenis.on("scroll", ScrollTrigger.update); // Access lenis instance if needed via ref or hook context if available, but basic sync is often automatic or handled via ticker
-
-    // GSAP Ticker for Lenis
-    // Note: ReactLenis usually handles internal raf, but if we need explicit gsap ticker sync:
-    /* 
-    const update = (time: number) => {
-      // lenis.raf(time * 1000)
-    }
-    gsap.ticker.add(update)
-    */
-    
-    // For now, keeping default configuration as it was working, just cleaned up comments
-    
     return () => {
       // gsap.ticker.remove(update);
     };
@@ -63,8 +49,6 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/news/:id" element={<CarDetails />} />
-          
-          {/* Dynamic Brand Page */}
           <Route path="/brand/:brandId" element={<BrandPage />} />
         </Routes>
         <Footer />
