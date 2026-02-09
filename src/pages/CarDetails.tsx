@@ -3,7 +3,7 @@ import { news } from "@/data/news";
 import type { NewsCard } from "@/types";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { ArrowLeft, Gauge, Zap, Wind, Timer } from "lucide-react";
+import { Gauge, Zap, Wind, Timer } from "lucide-react";
 
 export default function CarDetails() {
   const { id } = useParams();
