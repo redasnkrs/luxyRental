@@ -29,7 +29,7 @@ const Navbar = () => {
 
         <ul className="flex items-center gap-5">
           <li>
-            <a href="#car">Cars</a>
+            <Link to="/fleet">Cars</Link>
           </li>
           <li>
             <Link to="/news">News</Link>

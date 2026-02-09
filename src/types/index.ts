@@ -24,4 +24,12 @@ export interface NewsCard {
   accentColor?: string;
 }
 
-export type BrandId = "lamborghini" | "ferrari" | "porsche" | "bmw" | "aston-martin" | "mercedes" | "mclaren" | "nissan";
+export type BrandId = "lamborghini" | "ferrari" | "porsche" | "bmw" | "aston-martin" | "mercedes" | "mclaren" | "nissan" | "toyota" | "bugatti";
+
+export interface BrandFleetConfig {
+  id: BrandId;
+  name: string;
+  tagline: string;
+  image: string;
+  color: string;
+}

@@ -4,6 +4,8 @@ import HomePage from "@/pages/HomePage";
 import CarDetails from "@/pages/CarDetails";
 import BrandPage from "@/pages/BrandPage";
 import NewsPage from "@/pages/NewsPage";
+import FleetPage from "@/pages/FleetPage";
+import BrandFleetDetail from "@/pages/BrandFleetDetail";
 import NavBar from "@/components/layout/NavBar";
 import Footer from "@/components/layout/Footer";
 import LoadingScreen from "@/components/layout/LoadingScreen";
@@ -29,6 +31,24 @@ function LenisScrollHandler() {
   return null;
 }
 
+function AppContent() {
+  return (
+    <>
+      <ScrollToTop />
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/news" element={<NewsPage />} />
+        <Route path="/news/:id" element={<CarDetails />} />
+        <Route path="/brand/:brandId" element={<BrandPage />} />
+        <Route path="/fleet" element={<FleetPage />} />
+        <Route path="/fleet/:brandId" element={<BrandFleetDetail />} />
+      </Routes>
+      <Footer />
+    </>
+  );
+}
+
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -45,15 +65,7 @@ export default function App() {
       <LenisScrollHandler />
       {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
       <Router>
-        <ScrollToTop />
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/news" element={<NewsPage />} />
-          <Route path="/news/:id" element={<CarDetails />} />
-          <Route path="/brand/:brandId" element={<BrandPage />} />
-        </Routes>
-        <Footer />
+        <AppContent />
       </Router>
     </ReactLenis>
   );
