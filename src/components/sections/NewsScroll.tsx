@@ -40,7 +40,7 @@ const NewsCardItem = ({ card }: { card: NewsCard }) => {
       <div className="absolute z-10 bottom-10 left-0 right-0 p-6">
         <div className="flex flex-col gap-4">
           <div className="flex justify-between items-end">
-            <p className="text-5xl font-black uppercase text-white leading-none">
+            <p className="text-3xl font-black uppercase text-white leading-none">
               {card.title}
             </p>
             <span className="px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-[10px] uppercase tracking-[0.2em] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
