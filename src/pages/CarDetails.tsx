@@ -4,6 +4,7 @@ import type { NewsCard } from "@/types";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Gauge, Zap, Wind, Timer } from "lucide-react";
+import OptimizedImage from "@/components/ui/OptimizedImage";
 
 export default function CarDetails() {
   const { id } = useParams();
@@ -120,7 +121,7 @@ export default function CarDetails() {
           transition={{ duration: 1 }}
           className="relative aspect-3/4 rounded-2xl overflow-hidden group"
         >
-          <img
+          <OptimizedImage
             src={car.gallery?.[1] || car.url}
             alt={car.title}
             className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
@@ -187,7 +188,7 @@ export default function CarDetails() {
                   i === 0 ? "md:col-span-2 md:aspect-video" : ""
                 }`}
               >
-                <img
+                <OptimizedImage
                   src={img}
                   alt={`${car.title} gallery ${i}`}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"

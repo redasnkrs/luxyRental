@@ -2,6 +2,7 @@ import { news } from "@/data/news";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import OptimizedImage from "@/components/ui/OptimizedImage";
 
 export default function NewsPage() {
   // We'll treat the first item as the featured "Cover Story"
@@ -32,10 +33,7 @@ export default function NewsPage() {
         <section className="mb-32">
           <Link to={`/news/${featured.id}`} className="group block relative">
             <div className="relative aspect-[21/9] overflow-hidden rounded-sm mb-8">
-              <motion.img
-                initial={{ scale: 1.1 }}
-                animate={{ scale: 1 }}
-                transition={{ duration: 1.5 }}
+              <OptimizedImage
                 src={featured.url}
                 alt={featured.title}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 brightness-50"
@@ -87,7 +85,7 @@ export default function NewsPage() {
                 <div
                   className={`relative overflow-hidden mb-8 aspect-[4/5] ${index % 2 === 0 ? "md:mt-12" : ""}`}
                 >
-                  <img
+                  <OptimizedImage
                     src={item.url}
                     alt={item.title}
                     className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110"
