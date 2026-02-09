@@ -15,37 +15,45 @@ const HorizontalScrollCarousel = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const wrapperRef = useRef<HTMLDivElement | null>(null);
 
-  useGSAP(() => {
-    const container = containerRef.current;
-    const wrapper = wrapperRef.current;
-    if (!container || !wrapper) return;
+  useGSAP(
+    () => {
+      const container = containerRef.current;
+      const wrapper = wrapperRef.current;
+      if (!container || !wrapper) return;
 
-    // Get the total scroll width
-    const scrollWidth = wrapper.scrollWidth;
-    const viewportWidth = window.innerWidth;
-    
-    // Calculate exact movement needed
-    const xMovement = -(scrollWidth - viewportWidth + 100); // 100px buffer
+      // Get the total scroll width
+      const scrollWidth = wrapper.scrollWidth;
+      const viewportWidth = window.innerWidth;
 
-    gsap.to(wrapper, {
-      x: xMovement,
-      ease: "none",
-      scrollTrigger: {
-        trigger: container,
-        start: "top 20%",
-        end: `+=${Math.abs(xMovement) + 1000}`, // Increased scroll duration for smoother feel
-        pin: true,
-        scrub: 1,
-        invalidateOnRefresh: true,
-        anticipatePin: 1
-      }
-    });
+      // Calculate exact movement needed
+      const xMovement = -(scrollWidth - viewportWidth + 100); // 100px buffer
 
-  }, { scope: containerRef });
+      gsap.to(wrapper, {
+        x: xMovement,
+        ease: "none",
+        scrollTrigger: {
+          trigger: container,
+          start: "top 15%",
+          end: `+=${Math.abs(xMovement) + 1000}`, // Increased scroll duration for smoother feel
+          pin: true,
+          scrub: 1,
+          invalidateOnRefresh: true,
+          anticipatePin: 1,
+        },
+      });
+    },
+    { scope: containerRef },
+  );
 
   return (
-    <section ref={containerRef} className="relative w-full h-screen overflow-hidden pt-20">
-      <div ref={wrapperRef} className="flex h-full gap-10 pl-4 md:pl-20 items-center">
+    <section
+      ref={containerRef}
+      className="relative w-full h-screen overflow-hidden pt-20"
+    >
+      <div
+        ref={wrapperRef}
+        className="flex h-full gap-10 pl-4 md:pl-20 items-center"
+      >
         {news.map((card) => {
           return <Card card={card} key={card.id} />;
         })}

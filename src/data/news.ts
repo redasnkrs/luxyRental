@@ -5,6 +5,7 @@ import bmwTop from "../assets/car/bmw/bmw_hero.webp";
 import porscheGt3 from "../assets/car/porshe/gt3rs-interrior.webp";
 import nissanGtr from "../assets/car/nissan/nissan-r35.webp";
 import mclaren720 from "../assets/car/mclaren/mclaren-720s-back.webp";
+import lambUrusFront from "../assets/car/lambh/lamb-urus-front.JPG";
 
 export type CardType = {
   url: string;
@@ -32,7 +33,7 @@ export const news: CardType[] = [
     position: "left",
   },
   {
-    url: astonDb11,
+    url: lambUrusFront,
     title: "Aston Martin DB11",
     description:
       "The standard-bearer for modern Aston Martin grand tourers. It blends timeless elegance with twin-turbocharged V8 or V12 power.",
