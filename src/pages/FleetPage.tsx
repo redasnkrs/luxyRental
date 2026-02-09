@@ -1,20 +1,34 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { BrandFleetConfig } from "@/types";
+import type { BrandFleetConfig } from "@/types";
 import OptimizedImage from "@/components/ui/OptimizedImage";
 
 // Assets
-import ferrariImg from "@/assets/car/ferrari/test1.webp";
-import porscheImg from "@/assets/car/porshe/test-1.webp";
+import ferrariImg from "@/assets/car/ferrari/laferrari-front.webp";
+import ferrariLogo from "@/assets/car/ferrari/Ferrari LaFerrari Logo.png";
+import porscheImg from "@/assets/car/porshe/outside-porsche.webp";
 import bugattiImg from "@/assets/car/bugatti/bugatti-super-sport.webp";
 import toyotaImg from "@/assets/car/nissan/nissan-r35-front.webp";
 
-const BRANDS: BrandFleetConfig[] = [
+// Logos (Using high-quality SVGs for luxury feel)
+const LOGOS = {
+  ferrari: ferrariLogo,
+  porsche: "https://www.car-logos.org/wp-content/uploads/2011/09/porsche.png",
+  bugatti: "https://www.car-logos.org/wp-content/uploads/2011/09/bugatti.png",
+  toyota: "https://www.car-logos.org/wp-content/uploads/2011/09/toyota.png",
+};
+
+interface ExtendedBrandConfig extends BrandFleetConfig {
+  logo: string;
+}
+
+const BRANDS: ExtendedBrandConfig[] = [
   {
     id: "ferrari",
     name: "Ferrari",
     tagline: "The Soul of Italian Passion",
     image: ferrariImg,
+    logo: LOGOS.ferrari,
     color: "#E31E24",
   },
   {
@@ -22,6 +36,7 @@ const BRANDS: BrandFleetConfig[] = [
     name: "Porsche",
     tagline: "The Pinnacle of Engineering",
     image: porscheImg,
+    logo: LOGOS.porsche,
     color: "#808080",
   },
   {
@@ -29,6 +44,7 @@ const BRANDS: BrandFleetConfig[] = [
     name: "Bugatti",
     tagline: "Defining Speed & Excellence",
     image: bugattiImg,
+    logo: LOGOS.bugatti,
     color: "#002C5F",
   },
   {
@@ -36,6 +52,7 @@ const BRANDS: BrandFleetConfig[] = [
     name: "Toyota",
     tagline: "The Legend of Endurance",
     image: toyotaImg,
+    logo: LOGOS.toyota,
     color: "#FFFFFF",
   },
 ];
@@ -54,12 +71,21 @@ export default function FleetPage() {
           onClick={() => navigate(`/fleet/${brand.id}`)}
           className="relative flex-1 group cursor-pointer border-r border-white/5 last:border-none overflow-hidden transition-[flex] duration-700 ease-in-out md:hover:flex-[2]"
         >
-          {/* Background Image */}
+          {/* Background Image (Reveal Effect) */}
           <div className="absolute inset-0 z-0">
             <OptimizedImage
               src={brand.image}
               alt={brand.name}
               className="w-full h-full object-cover transition-all duration-[1.2s] ease-out scale-[1.4] group-hover:scale-100 brightness-[0.2] group-hover:brightness-[0.6] grayscale group-hover:grayscale-0"
+            />
+          </div>
+
+          {/* Centered Logo (Fade out Effect) */}
+          <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
+            <motion.img
+              src={brand.logo}
+              alt={`${brand.name} logo`}
+              className="w-24 md:w-32 h-auto object-contain transition-all duration-700 group-hover:opacity-0 group-hover:scale-150 group-hover:blur-sm"
             />
           </div>
 
@@ -73,7 +99,7 @@ export default function FleetPage() {
               >
                 Category 0{index + 1}
               </motion.span>
-              <h2 className="font-['Boska'] text-5xl md:text-7xl font-bold text-white uppercase leading-none">
+              <h2 className="font-['Boska'] text-5xl md:text-7xl font-bold text-white uppercase leading-none transition-transform duration-700 group-hover:-translate-y-2">
                 {brand.name}
               </h2>
             </div>
