@@ -6,6 +6,7 @@ import BrandPage from "@/pages/BrandPage";
 import NavBar from "@/components/layout/NavBar";
 import Footer from "@/components/layout/Footer";
 import LoadingScreen from "@/components/layout/LoadingScreen";
+import ScrollToTop from "@/components/layout/ScrollToTop";
 import { ReactLenis, useLenis } from "lenis/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -57,6 +58,7 @@ export default function App() {
       <LenisScrollHandler />
       {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
       <Router>
+        <ScrollToTop />
         <NavBar />
         <Routes>
           <Route path="/" element={<HomePage />} />

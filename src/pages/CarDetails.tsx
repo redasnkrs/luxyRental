@@ -2,7 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { news } from "@/data/news";
 import type { NewsCard } from "@/types";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import { ArrowLeft, Gauge, Zap, Wind, Timer } from "lucide-react";
 
 export default function CarDetails() {
@@ -10,10 +10,6 @@ export default function CarDetails() {
   const navigate = useNavigate();
   const car = news.find((c) => c.id === Number(id)) as NewsCard;
   const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [id]);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
